@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:IndependentWork3WpfApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
- 
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="MenuItem_Click"/>
+        <CommandBinding Command="Save" Executed="MenuItem_Click_1"/>
+        <CommandBinding Command="Close" Executed="MenuItem_Click_2"/>
+        
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -16,10 +21,10 @@
         </Grid.RowDefinitions>
         <Menu Margin="1" Padding="1">
             <MenuItem Header="_Файл">
-                <MenuItem Header="_Открыть" Click="MenuItem_Click"/>
-                <MenuItem Header="_Сохранить" Click="MenuItem_Click_1"/>
+                <MenuItem Header="_Открыть" Command="ApplicationCommands.Open"/>
+                <MenuItem Header="_Сохранить" Command="ApplicationCommands.Save"/>
                 <Separator/>
-                <MenuItem Header="_Закрыть" Click="MenuItem_Click_2"/>
+                <MenuItem Header="_Закрыть" Command="ApplicationCommands.Close"/>
             </MenuItem>
             <MenuItem Header="_Правка"></MenuItem>
             <MenuItem Header="_Справка"></MenuItem>
